@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello Drive - Kursus mengemudi</title>
-    <link href="https://cdn.statically.io/gh/irfanhkm/tk-1-streaming-app/fae1da95/public/css/app.css" rel="stylesheet">
+    <title>VideoTube</title>
+    @if(env('APP_ENV') == 'production')
+        <link href="https://cdn.statically.io/gh/irfanhkm/tk-1-streaming-app/fae1da95/public/css/app.css" rel="stylesheet">
+    @else
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @endif
     <style>
         html {
             scroll-behavior: smooth;
