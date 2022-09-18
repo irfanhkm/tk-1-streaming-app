@@ -13,5 +13,3 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-Route::delete('/upload/delete/{id}', [UploadVideoController::class, 'delete'])->name('upload.video.delete');

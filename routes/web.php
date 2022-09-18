@@ -19,3 +19,4 @@ Route::get('/', [HomeController::class, 'home']);
 
 Route::post('/upload', [UploadVideoController::class, 'create'])->name('upload.video.create');
 Route::put('/upload/{id}', [UploadVideoController::class, 'update'])->name('upload.video.update');
+Route::delete('/upload/delete/{id}', [UploadVideoController::class, 'delete'])->name('upload.video.delete');

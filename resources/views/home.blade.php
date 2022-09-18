@@ -114,7 +114,7 @@
                                                         focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:ml-3
                                                         sm:w-auto sm:text-sm"
                                                  id="deleteData-{{$video->id}}"
-                                                 aria-label="{{env('APP_URL')}}/api/upload/delete/{$video->id}}"
+                                                 aria-label="{{env('APP_URL')}}/upload/delete/{{$video->id}}"
                                             >
                                                 Delete
                                             </div>
