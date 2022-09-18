@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello Drive - Kursus mengemudi</title>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="https://cdn.statically.io/gh/irfanhkm/tk-1-streaming-app/fae1da95/public/css/app.cssg" rel="stylesheet">
     <style>
         html {
             scroll-behavior: smooth;
