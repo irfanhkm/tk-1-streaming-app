@@ -14,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::delete('/upload/{id}', [UploadVideoController::class, 'delete'])->name('upload.video.delete');
+Route::delete('/upload/delete/{id}', [UploadVideoController::class, 'delete'])->name('upload.video.delete');
