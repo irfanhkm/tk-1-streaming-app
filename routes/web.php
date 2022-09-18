@@ -17,4 +17,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'home']);
 
-Route::post('/upload', [UploadVideoController::class, 'upload'])->name('upload.video.post');
+Route::post('/upload', [UploadVideoController::class, 'create'])->name('upload.video.create');
+Route::put('/upload/{id}', [UploadVideoController::class, 'update'])->name('upload.video.update');

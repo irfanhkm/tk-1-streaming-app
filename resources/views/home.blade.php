@@ -72,22 +72,58 @@
                         <div class="fixed inset-0 z-10 overflow-y-auto">
                             <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
                                 <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-                                    <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                                    <div class="bg-white pt-5 pb-4 sm:p-6 sm:pb-4">
                                         <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                                            <div class="modal-close cursor-pointer z-50" id="closeModal-{{$video->id}}">
-                                                <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-                                                    <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
-                                                </svg>
-                                            </div>
                                             <video controls>
                                                 <source src="{{$video->url}}" type="video/mp4">
                                                 Your browser does not support the video tag.
                                             </video>
-                                            <h3 class="text-lg font-medium leading-6 text-gray-900 mt-2" id="modal-title">
-                                                {{ $video->name }}
-                                            </h3>
                                         </div>
                                     </div>
+                                    <form class=6" action="{{route('upload.video.update', $video->id)}}" method="post" enctype="multipart/form-data">
+                                        <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                                            <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                                                <h3 class="text-lg font-medium leading-6 text-gray-900 font-bold" id="modal-title">Edit Video</h3>
+                                                @csrf
+                                                @method('PUT')
+                                                <div class="mt-3">
+                                                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nama Video</label>
+                                                    <input type="text"
+                                                           name="name"
+                                                           id="name"
+                                                           value="{{$video->name}}"
+                                                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                                           placeholder="Video lucu" required>
+                                                </div>
+                                                <div class="mt-3">
+                                                    <label for="video" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Video</label>
+                                                    <input type="file"
+                                                           name="video"
+                                                           id="video"
+                                                           accept="video/mp4,video/x-m4v,video/*"
+                                                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                                            <button type="submit"
+                                                    class="inline-flex w-full justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm">Edit</button>
+                                            <div class="cursor-pointer mt-3 inline-flex w-full justify-center
+                                                        rounded-md border border-gray-300 bg-white px-4 py-2 text-base
+                                                        font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none
+                                                        focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:ml-3
+                                                        sm:w-auto sm:text-sm"
+                                                 id="deleteData-{{$video->id}}"
+                                                 aria-label="{{route('upload.video.delete', $video->id)}}"
+                                            >
+                                                Delete
+                                            </div>
+                                            <div class="cursor-pointer mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+                                                 id="closeModal-{{$video->id}}">
+                                                Cancel
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -103,7 +139,7 @@
     <div class="fixed inset-0 z-10 overflow-y-auto">
         <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
             <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-                <form class=6" action="{{route('upload.video.post')}}" method="post" enctype="multipart/form-data">
+                <form class=6" action="{{route('upload.video.create')}}" method="post" enctype="multipart/form-data">
                     <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                         <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                             <h3 class="text-lg font-medium leading-6 text-gray-900 font-bold" id="modal-title">Upload Video</h3>
@@ -162,5 +198,19 @@
     $(document).find("div[id^='closeModal-']").live('click', function() {
         const num = this.id.split('-')[1];
         $('#modal-detail-' + num).toggle();
+    });
+
+    $(document).find("div[id^='deleteData-']").live('click', function() {
+        const num = this.id.split('-')[1];
+        if (confirm("Are you sure want to delete this data ?")) {
+            $.ajax({
+                url: this.ariaLabel,
+                type: 'DELETE',
+                success: function() {
+                    location.reload();
+                    $('#modal-detail-' + num).toggle();
+                }
+            });
+        }
     });
 </script>
