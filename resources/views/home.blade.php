@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello Drive - Kursus mengemudi</title>
-    <link href="https://cdn.statically.io/gh/irfanhkm/tk-1-streaming-app/fae1da95/public/css/app.cssg" rel="stylesheet">
+    <link href="https://cdn.statically.io/gh/irfanhkm/tk-1-streaming-app/fae1da95/public/css/app.css" rel="stylesheet">
     <style>
         html {
             scroll-behavior: smooth;
         }
     </style>
-    <script type='text/javascript' src='http://code.jquery.com/jquery-1.8.3.min.js'></script>
+    <script type='text/javascript' src='https://code.jquery.com/jquery-1.8.3.min.js'></script>
 </head>
 <body>
 <header class="fixed w-full">
@@ -117,6 +117,7 @@
                                 <input type="file"
                                        name="video"
                                        id="video"
+                                       accept="video/mp4,video/x-m4v,video/*"
                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
                             </div>
                         </div>
