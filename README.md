@@ -4,7 +4,8 @@ Anggota:
 
 ### Installation
 - clone
-- composer and npm instal
+- composer and npm install
+- run `npm run watch-poll` for development 
 - copy and setup env
 - run migration and seed
 - visit root page
@@ -13,3 +14,6 @@ Anggota:
 - PHP > 8
 - Node and package manager
 - Tailwind CSS
+
+### Demo
+- https://tk-1-streaming-app-irfanhkm.vercel.app/
